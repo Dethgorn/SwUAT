@@ -46,17 +46,20 @@ public class CameraFollow : MonoBehaviour
         theRay.direction = theCamera.transform.forward;
         */
 
+
+
         // raycast through the mouse
         if (groundPlane.Raycast(theRay, out distance))
         {
             // find world point where intersection is
             Vector3 intersectionPoint = theRay.GetPoint(distance);
 
-            // rotate towards
+            // math for rotate towards
             Quaternion targetRotation;
             Vector3 lookVector = intersectionPoint - player.position;
             targetRotation = Quaternion.LookRotation(lookVector, Vector3.up);
 
+            // rotate towards the mouse
             player.rotation = Quaternion.RotateTowards(player.rotation, targetRotation, rotateSpeed * Time.deltaTime);
             
         }

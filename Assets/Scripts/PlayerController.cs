@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CharacterPawn pawn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         pawn.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-        
-        
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            pawn.Dash();
+        }
+
+
     }
 
 
