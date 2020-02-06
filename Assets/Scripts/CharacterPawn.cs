@@ -9,6 +9,7 @@ public class CharacterPawn : MonoBehaviour
     public float speed;
     public float dashDistance;
     public float startDashTime;
+    public float currentHP;
 
     // private vars
     private Transform tf;
@@ -39,5 +40,10 @@ public class CharacterPawn : MonoBehaviour
     {
         // teleport the distance, Dash!
         tf.position += (rb.velocity * dashDistance);
+    }
+
+    public void AddHealth(float healthToAdd)
+    {
+        currentHP += healthToAdd;
     }
 }
