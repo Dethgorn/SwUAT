@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObserverTest : MonoBehaviour
 {
 
-    public HealthTest playerHPComponent;
+    public PlayerHealth playerHPComponent;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class ObserverTest : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            playerHPComponent.currentHealth -= 1;
+            playerHPComponent.SetHealth(-1);
         }
     }
 }

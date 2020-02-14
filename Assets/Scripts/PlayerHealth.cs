@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+
+public class UnityIntEvent : UnityEvent<int> { }
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health and Shields")]
@@ -10,6 +13,13 @@ public class PlayerHealth : MonoBehaviour
     [Space(10)]
     [SerializeField, Tooltip("The player's maximum shield point setting")] private int playerMaxShields;
     [SerializeField, Tooltip("The player's current shield point setting")] private int playerCurrentShields;
+    [HideInInspector]
+    public UnityIntEvent OnHealthChange = new UnityIntEvent();
+
+    private void Start()
+    {
+        playerCurrentHealth = playerMaxHealth;
+    }
 
     private void Update()
     {
@@ -32,9 +42,13 @@ public class PlayerHealth : MonoBehaviour
     /// <param name="hp"></param>
     public void SetHealth(int hp)
     {
-        if (hp < playerMaxHealth)
+        Debug.Log(playerCurrentHealth);
+        // make sure we don't go over the max
+        if ((hp + playerCurrentHealth) <= playerMaxHealth)
         {
-            playerCurrentHealth = hp;
+            playerCurrentHealth += hp;
+            OnHealthChange.Invoke(playerCurrentHealth);
+            
         }
     }
 

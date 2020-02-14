@@ -6,14 +6,15 @@ public class CharacterPawn : MonoBehaviour
 {
     // public vars
     public Animator anim;
-    public float speed;
-    public float dashDistance;
-    public float startDashTime;
-    public float currentHP;
+    
 
     // private vars
+    [SerializeField] private float speed;
+    [SerializeField] private float dashDistance;
+    [SerializeField] private float startDashTime;
     private Transform tf;
     private Rigidbody rb;
+    private PlayerHealth playerHP;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class CharacterPawn : MonoBehaviour
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
+        playerHP = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,8 @@ public class CharacterPawn : MonoBehaviour
         tf.position += (rb.velocity * dashDistance);
     }
 
-    public void AddHealth(float healthToAdd)
+    public void AddHealth(int healthToAdd)
     {
-        currentHP += healthToAdd;
+         playerHP.SetHealth(healthToAdd);
     }
 }

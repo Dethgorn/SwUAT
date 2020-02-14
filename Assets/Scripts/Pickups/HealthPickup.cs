@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class HealthPickup : Pickup
 {
+    private Transform tf;
 
+    private void Start()
+    {
+        tf = GetComponent<Transform>();
+        Destroy(this.gameObject, 10f);
+    }
     protected override void OnPickup(CharacterPawn picker)
     {
         picker.AddHealth(10);
-        base.OnPickup(picker);
+        //base.OnPickup(picker);
     }
     protected override void DoStuff()
     {
 
         // included by default
         throw new System.NotImplementedException();
+    }
+    private void Update()
+    {
+        tf.Rotate(new Vector3(0, 30, 0) * Time.deltaTime);
     }
 }

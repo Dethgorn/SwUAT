@@ -11,6 +11,10 @@ public class WeaponIK : MonoBehaviour
     [SerializeField]
     private Transform rightElbowPoint;
     [SerializeField]
+    private Transform leftHandPoint;
+    [SerializeField]
+    private Transform leftElbowPoint;
+    [SerializeField]
     [Range(0.0f, 1.0f)]
     private float IKweight;
 
@@ -33,5 +37,10 @@ public class WeaponIK : MonoBehaviour
         anim.SetIKPositionWeight(AvatarIKGoal.RightHand, IKweight);
         anim.SetIKHintPosition(AvatarIKHint.RightElbow, rightElbowPoint.position);
         anim.SetIKHintPositionWeight(AvatarIKHint.RightElbow, IKweight);
+        anim.SetIKPosition(AvatarIKGoal.LeftHand, leftHandPoint.position);
+        anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, IKweight);
+        anim.SetIKHintPosition(AvatarIKHint.LeftElbow, leftElbowPoint.position);
+        anim.SetIKHintPositionWeight(AvatarIKHint.LeftElbow, IKweight);
+
     }
 }
