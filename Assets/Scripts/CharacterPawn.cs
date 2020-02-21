@@ -12,9 +12,12 @@ public class CharacterPawn : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float dashDistance;
     [SerializeField] private float startDashTime;
+    [SerializeField] private Transform attachmentPoint;
     private Transform tf;
     private Rigidbody rb;
     private PlayerHealth playerHP;
+
+    int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +26,18 @@ public class CharacterPawn : MonoBehaviour
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         playerHP = GetComponent<PlayerHealth>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (i < 1)
+        {
+            EquipWeapon(GameManager.instance.equippedWeapon);
+            i++;
+        }
             
     }
 
@@ -47,5 +56,14 @@ public class CharacterPawn : MonoBehaviour
     public void AddHealth(int healthToAdd)
     {
          playerHP.SetHealth(healthToAdd);
+    }
+
+    public void EquipWeapon(Weapon gun)
+    {
+        // try out different instantiates
+        GameManager.instance.equippedWeapon = Instantiate(gun) as Weapon;
+        GameManager.instance.equippedWeapon.transform.SetParent(attachmentPoint);
+        GameManager.instance.equippedWeapon.transform.localPosition = gun.transform.localPosition;
+        GameManager.instance.equippedWeapon.transform.localRotation = gun.transform.localRotation;
     }
 }

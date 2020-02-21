@@ -5,32 +5,27 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    public float DamageDone;
-    public float AttackSpeed;
+    protected float DamageDone;
+    protected float AttackSpeed;
+
+
+    public Transform leftHand;
+    public Transform rightHand;
 
     public UnityEvent OnTriggerPull;
     public UnityEvent OnTriggerRelease;
 
     protected virtual void OnPullTrigger()
     {
-
     }
 
     protected virtual void OnReleaseTrigger()
     {
-
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        
     }
 }

@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject player;
+    public Weapon equippedWeapon;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Setup the singleton
         if (instance == null)

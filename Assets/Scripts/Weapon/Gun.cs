@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunWeapon : ProjectileWeapon
+public class Gun : Weapon
 {
+    
+    protected float ammoCount;
+
     protected override void OnPullTrigger()
     {
         base.OnPullTrigger();
@@ -12,5 +15,13 @@ public class GunWeapon : ProjectileWeapon
     protected override void OnReleaseTrigger()
     {
         base.OnReleaseTrigger();
+    }
+
+    protected virtual void Fire()
+    {
+    }
+
+    protected override void Update()
+    {
     }
 }

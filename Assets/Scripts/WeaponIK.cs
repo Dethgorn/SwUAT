@@ -23,14 +23,18 @@ public class WeaponIK : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        leftHandPoint = GameManager.instance.equippedWeapon.leftHand;
+        rightHandPoint = GameManager.instance.equippedWeapon.rightHand;
     }
 
+    
     protected virtual void OnAnimatorIK()
     {
         anim.SetIKPosition(AvatarIKGoal.RightHand, rightHandPoint.position);
@@ -43,4 +47,5 @@ public class WeaponIK : MonoBehaviour
         anim.SetIKHintPositionWeight(AvatarIKHint.LeftElbow, IKweight);
 
     }
+    
 }
