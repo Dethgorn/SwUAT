@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class UnityIntEvent : UnityEvent<int> { }
+public class UnityFloatEvent : UnityEvent<float> { }
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health and Shields")]
-    [SerializeField, Tooltip("The player's maximum hit point setting")] private int playerMaxHealth;
-    [SerializeField, Tooltip("The player's current hit point value")] private int playerCurrentHealth;
+    [SerializeField, Tooltip("The player's maximum hit point setting")] private float playerMaxHealth;
+    [SerializeField, Tooltip("The player's current hit point value")] private float playerCurrentHealth;
     [Space(10)]
-    [SerializeField, Tooltip("The player's maximum shield point setting")] private int playerMaxShields;
-    [SerializeField, Tooltip("The player's current shield point setting")] private int playerCurrentShields;
+    [SerializeField, Tooltip("The player's maximum shield point setting")] private float playerMaxShields;
+    [SerializeField, Tooltip("The player's current shield point setting")] private float playerCurrentShields;
     [HideInInspector]
-    public UnityIntEvent OnHealthChange = new UnityIntEvent();
+    public UnityFloatEvent OnHealthChange = new UnityFloatEvent();
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     /// Retrieves player's current health from private variable.
     /// </summary>
     /// <returns></returns>
-    public int GetHealth()
+    public float GetHealth()
     {
         return playerCurrentHealth;
     }
@@ -40,15 +40,14 @@ public class PlayerHealth : MonoBehaviour
     /// Sets the player's current health private variable by passing in an integer.
     /// </summary>
     /// <param name="hp"></param>
-    public void SetHealth(int hp)
+    public void SetHealth(float hp)
     {
-        Debug.Log(playerCurrentHealth);
+        // Debug.Log(playerCurrentHealth);
         // make sure we don't go over the max
         if ((hp + playerCurrentHealth) <= playerMaxHealth)
         {
             playerCurrentHealth += hp;
             OnHealthChange.Invoke(playerCurrentHealth);
-            
         }
     }
 
@@ -56,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
     /// Retrieves the player's current shields from private variable.
     /// </summary>
     /// <returns></returns>
-    public int GetShields()
+    public float GetShields()
     {
         return playerCurrentShields;
     }
@@ -71,6 +70,12 @@ public class PlayerHealth : MonoBehaviour
         {
             playerCurrentShields = shields;
         }
+    }
+
+    public void TakeDamage(float amountOfDamage)
+    {
+        playerCurrentHealth -= amountOfDamage;
+        playerCurrentHealth = Mathf.Clamp(playerCurrentHealth, 0, playerMaxHealth);
     }
 
 

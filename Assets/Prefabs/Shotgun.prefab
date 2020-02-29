@@ -113,19 +113,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62af77e84d25b47a1e9e749cc8a431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageDone: 15
   leftHand: {fileID: 7378698286210892955}
   rightHand: {fileID: 7378698285826842997}
-  OnTriggerPull:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnTriggerRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  fireRate: 0
+  ammoCount: 20
+  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
+  barrel: {fileID: 7378698286994685738}
+  fireRate: 1
+  muzzleVelocity: 1
 --- !u!1 &4992958248727878710
 GameObject:
   m_ObjectHideFlags: 0

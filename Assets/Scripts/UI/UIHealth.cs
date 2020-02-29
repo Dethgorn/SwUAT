@@ -26,7 +26,7 @@ public class UIHealth : MonoBehaviour
         
     }
 
-    public void UpdateHealthUI(int newHP)
+    public void UpdateHealthUI(float newHP)
     {
         playerHPText.text = newHP.ToString();
     }

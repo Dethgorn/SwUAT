@@ -6,30 +6,52 @@ public class SemiAutoGun : Gun
 {
     [SerializeField]
     private float fireRate;
+    [SerializeField]
+    private float muzzleVelocity = 1f;
+    [SerializeField]
+    private GameObject bullet;
 
     private void Start()
     {
-        OnTriggerPull.AddListener(OnPullTrigger);
-        OnTriggerRelease.AddListener(OnReleaseTrigger);
+        
     }
 
-    protected override void OnPullTrigger()
+    public override void OnPullTrigger()
     {
-        base.OnPullTrigger();
+        if (ammoCount > 0)
+        {
+            ammoCount--;
+            Fire();
+        }
     }
 
-    protected override void OnReleaseTrigger()
+    public override void OnReleaseTrigger()
     {
         base.OnReleaseTrigger();
     }
 
     protected override void Fire()
     {
-        base.Fire();
+        // shoot bullets
+        GameObject shot = Instantiate(bullet, barrel.position, barrel.rotation) as GameObject;
+        // set the bullet data
+        Bullet bulletData = shot.GetComponent<Bullet>();
+        
+        if (bulletData != null)
+        {
+            Debug.Log(shot);
+            bulletData.damage = DamageDone;
+            bulletData.moveSpeed = muzzleVelocity;
+            //change layer
+            shot.gameObject.layer = gameObject.layer;
+        }
+        
     }
     
     protected override void Update()
     {
-        base.Update();
+        // shoot bullets
+        GameObject shot = Instantiate(bullet, barrel.position, barrel.rotation) as GameObject;
+        
     }
 }

@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2406208915482841292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.77, z: 3.64}
+  m_LocalPosition: {x: -0.82, y: -1.77, z: 3.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 45387580125610197}
@@ -330,20 +330,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c2e770de67df144920df531ec80fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageDone: 2
   leftHand: {fileID: 8983450226980793458}
   rightHand: {fileID: 3385461423204882370}
-  OnTriggerPull:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnTriggerRelease:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  ammoCount: 100
+  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
+  barrel: {fileID: 7062230819328217485}
   isFiring: 0
-  fireRate: 0.25
+  fireRate: 1
+  muzzleVelocity: 15
 --- !u!1 &6028357868078946004
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028357868078946004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.45, z: -6.26}
+  m_LocalPosition: {x: 0, y: -2.45, z: -7.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 45387580125610197}

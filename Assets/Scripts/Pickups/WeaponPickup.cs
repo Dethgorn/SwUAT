@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Pickup : MonoBehaviour
+public class WeaponPickup : Pickup
 {
+    public Weapon weapon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,15 +15,16 @@ public abstract class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
-    protected virtual void OnPickup(CharacterPawn picker)
+    protected override void OnPickup(CharacterPawn picker)
     {
-        // Debug.Log(gameObject.name + " picked up!");
+        if (picker != null)
+        {
+            picker.EquipWeapon(weapon);
+        }
     }
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +34,5 @@ public abstract class Pickup : MonoBehaviour
             OnPickup(otherpawn);
             Destroy(gameObject);
         }
-        
-        
     }
 }

@@ -8,37 +8,59 @@ public class FullAutoGun : Gun
     private bool isFiring = false;
     [SerializeField]
     private float fireRate = 0.25f;
+    [SerializeField]
+    private float muzzleVelocity = 1f;
+    [SerializeField]
+    private GameObject bullet;
+
+    private float countdown;
 
     private void Start()
     {
-        OnTriggerPull.AddListener(OnPullTrigger);
-        OnTriggerRelease.AddListener(OnReleaseTrigger);
+        
+        countdown = 0;
     }
 
-    protected override void OnReleaseTrigger()
-    {
-        isFiring = true;
-        base.OnReleaseTrigger();
-    }
-
-    protected override void OnPullTrigger()
+    public override void OnReleaseTrigger()
     {
         isFiring = false;
-        base.OnPullTrigger();
+        
+    }
+
+    public override void OnPullTrigger()
+    {
+        isFiring = true;
+        
     }
 
     protected override void Fire()
     {
         // shoot bullets
-        base.Fire();
+        GameObject shot = Instantiate(bullet, barrel.position, barrel.rotation) as GameObject;
+        // set the bullet data
+        Bullet bulletData = shot.GetComponent<Bullet>();
+        if (bulletData != null)
+        {
+            bulletData.damage = DamageDone;
+            bulletData.moveSpeed = muzzleVelocity;
+            //change layer
+            shot.gameObject.layer = gameObject.layer;
+        }
     }
 
     protected override void Update()
     {
-        if (isFiring)
+        // count down each frame
+        if (countdown > 0)
         {
-            // user fireRate to only call it
+            countdown -= Time.deltaTime;
+        }
+
+        if (isFiring && ammoCount > 0 && countdown <= 0)
+        {
+            ammoCount--;
             Fire();
+            countdown = fireRate;
         }
     }
 }

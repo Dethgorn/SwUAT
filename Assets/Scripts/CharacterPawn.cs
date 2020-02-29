@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterPawn : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class CharacterPawn : MonoBehaviour
     private Transform tf;
     private Rigidbody rb;
     private PlayerHealth playerHP;
+    private Weapon weapon;
 
-    int i = 0;
+
+    public UnityEvent OnTriggerPull;
+    public UnityEvent OnTriggerRelease;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +31,7 @@ public class CharacterPawn : MonoBehaviour
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         playerHP = GetComponent<PlayerHealth>();
+        weapon = GameManager.instance.equippedWeapon;
         
     }
 
@@ -33,11 +39,6 @@ public class CharacterPawn : MonoBehaviour
     void Update()
     {
         
-        if (i < 1)
-        {
-            EquipWeapon(GameManager.instance.equippedWeapon);
-            i++;
-        }
             
     }
 
@@ -53,17 +54,39 @@ public class CharacterPawn : MonoBehaviour
         tf.position += (rb.velocity * dashDistance);
     }
 
-    public void AddHealth(int healthToAdd)
+    public void AddHealth(float healthToAdd)
     {
          playerHP.SetHealth(healthToAdd);
     }
 
     public void EquipWeapon(Weapon gun)
     {
-        // try out different instantiates
-        GameManager.instance.equippedWeapon = Instantiate(gun) as Weapon;
-        GameManager.instance.equippedWeapon.transform.SetParent(attachmentPoint);
-        GameManager.instance.equippedWeapon.transform.localPosition = gun.transform.localPosition;
-        GameManager.instance.equippedWeapon.transform.localRotation = gun.transform.localRotation;
+        if (weapon != null)
+        {
+            UnEquipWeapon();
+        }
+        else
+        {
+            weapon = gun;
+            // try out different instantiates
+            GameManager.instance.equippedWeapon = Instantiate(gun) as Weapon;
+            GameManager.instance.equippedWeapon.transform.SetParent(attachmentPoint);
+            GameManager.instance.equippedWeapon.transform.localPosition = gun.transform.localPosition;
+            GameManager.instance.equippedWeapon.transform.localRotation = gun.transform.localRotation;
+            // change the layer
+            GameManager.instance.equippedWeapon.gameObject.layer = gameObject.layer;
+            // add events
+            OnTriggerPull.AddListener(GameManager.instance.equippedWeapon.OnPullTrigger);
+            OnTriggerRelease.AddListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
+        }
+        
+    }
+
+    public void UnEquipWeapon()
+    {
+        OnTriggerPull.RemoveListener(GameManager.instance.equippedWeapon.OnPullTrigger);
+        OnTriggerRelease.RemoveListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
+        Destroy(weapon);
+        weapon = null;
     }
 }

@@ -16,14 +16,31 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pawn.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        HandleMoving();
+        HandleShooting();
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             pawn.Dash();
         }
-
-
+        
     }
 
+    private void HandleMoving()
+    {
+        pawn.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+    }
+
+    private void HandleShooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            pawn.OnTriggerPull.Invoke();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            pawn.OnTriggerRelease.Invoke();
+        }
+    }
 
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Gun : Weapon
 {
-    
+    [SerializeField]
     protected float ammoCount;
+    
+    [SerializeField]
+    protected Transform barrel;
 
-    protected override void OnPullTrigger()
+    public override void OnPullTrigger()
     {
         base.OnPullTrigger();
     }
 
-    protected override void OnReleaseTrigger()
+    public override void OnReleaseTrigger()
     {
         base.OnReleaseTrigger();
     }
