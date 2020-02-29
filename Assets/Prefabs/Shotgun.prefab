@@ -117,10 +117,10 @@ MonoBehaviour:
   leftHand: {fileID: 7378698286210892955}
   rightHand: {fileID: 7378698285826842997}
   ammoCount: 20
-  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
   barrel: {fileID: 7378698286994685738}
   fireRate: 1
-  muzzleVelocity: 1
+  muzzleVelocity: 10
+  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
 --- !u!1 &4992958248727878710
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,10 +42,12 @@ public class CharacterPawn : MonoBehaviour
             
     }
 
-    public void Move(Vector2 direction)
+    public void Move(Vector3 direction)
     {
+        direction = transform.InverseTransformDirection(direction);
+        direction = Vector3.ClampMagnitude(direction, 1);
         anim.SetFloat("Horizontal", direction.x * speed);
-        anim.SetFloat("Vertical", direction.y * speed);
+        anim.SetFloat("Vertical", direction.z * speed);
     }
 
     public void Dash()
@@ -65,28 +67,25 @@ public class CharacterPawn : MonoBehaviour
         {
             UnEquipWeapon();
         }
-        else
-        {
-            weapon = gun;
-            // try out different instantiates
-            GameManager.instance.equippedWeapon = Instantiate(gun) as Weapon;
-            GameManager.instance.equippedWeapon.transform.SetParent(attachmentPoint);
-            GameManager.instance.equippedWeapon.transform.localPosition = gun.transform.localPosition;
-            GameManager.instance.equippedWeapon.transform.localRotation = gun.transform.localRotation;
-            // change the layer
-            GameManager.instance.equippedWeapon.gameObject.layer = gameObject.layer;
-            // add events
-            OnTriggerPull.AddListener(GameManager.instance.equippedWeapon.OnPullTrigger);
-            OnTriggerRelease.AddListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
-        }
-        
+
+        weapon = gun;
+        // try out different instantiates
+        GameManager.instance.equippedWeapon = Instantiate(gun) as Weapon;
+        GameManager.instance.equippedWeapon.transform.SetParent(attachmentPoint);
+        GameManager.instance.equippedWeapon.transform.localPosition = gun.transform.localPosition;
+        GameManager.instance.equippedWeapon.transform.localRotation = gun.transform.localRotation;
+        // change the layer
+        GameManager.instance.equippedWeapon.gameObject.layer = gameObject.layer;
+        // add events
+        OnTriggerPull.AddListener(GameManager.instance.equippedWeapon.OnPullTrigger);
+        OnTriggerRelease.AddListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
     }
 
     public void UnEquipWeapon()
     {
         OnTriggerPull.RemoveListener(GameManager.instance.equippedWeapon.OnPullTrigger);
         OnTriggerRelease.RemoveListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
-        Destroy(weapon);
+        Destroy(GameManager.instance.equippedWeapon.gameObject);
         weapon = null;
     }
 }

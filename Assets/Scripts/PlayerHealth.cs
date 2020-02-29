@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField, Tooltip("The player's current shield point setting")] private float playerCurrentShields;
     [HideInInspector]
     public UnityFloatEvent OnHealthChange = new UnityFloatEvent();
+    public UnityEvent onDie;
 
     private void Start()
     {
@@ -76,7 +77,12 @@ public class PlayerHealth : MonoBehaviour
     {
         playerCurrentHealth -= amountOfDamage;
         playerCurrentHealth = Mathf.Clamp(playerCurrentHealth, 0, playerMaxHealth);
+        if (playerCurrentHealth <= 0)
+        {
+            onDie.Invoke();
+        }
     }
 
+    
 
 }

@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75132276155795386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3321762, y: 0.17, z: -0.27880812}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8226670785907693456}
@@ -136,6 +136,16 @@ MonoBehaviour:
   dashDistance: 1
   startDashTime: 1
   attachmentPoint: {fileID: 8226670785907693456}
+  OnTriggerPull:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTriggerRelease:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &8226670786292456649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +162,11 @@ MonoBehaviour:
   playerCurrentHealth: 0
   playerMaxShields: 100
   playerCurrentShields: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &8226670786292456653
 MonoBehaviour:
   m_ObjectHideFlags: 0

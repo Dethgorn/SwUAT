@@ -39,7 +39,6 @@ public class SemiAutoGun : Gun
         
         if (bulletData != null)
         {
-            Debug.Log(shot);
             bulletData.damage = DamageDone;
             bulletData.moveSpeed = muzzleVelocity;
             //change layer
@@ -50,8 +49,6 @@ public class SemiAutoGun : Gun
     
     protected override void Update()
     {
-        // shoot bullets
-        GameObject shot = Instantiate(bullet, barrel.position, barrel.rotation) as GameObject;
-        
+
     }
 }

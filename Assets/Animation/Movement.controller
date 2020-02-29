@@ -164,7 +164,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: e521f305ca910ba4cb552b4e8f7ab9cd,
       type: 3}
     m_Threshold: 0.2
-    m_Position: {x: 0.047152784, y: 4.0441294}
+    m_Position: {x: 0, y: 4.0433664}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -173,7 +173,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 49228c98b8cfaeb44bbd002148ad6656,
       type: 3}
     m_Threshold: 0.4
-    m_Position: {x: -2.65, y: -2.8}
+    m_Position: {x: 0, y: -2.4704025}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -182,7 +182,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 376642b6ba9d94f448cc88fee1c1006f,
       type: 3}
     m_Threshold: 0.6
-    m_Position: {x: -4.2821, y: 0.051401068}
+    m_Position: {x: -4.2792845, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -191,7 +191,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 99241b586b68a7c4ea21a67cda9c09a2,
       type: 3}
     m_Threshold: 0.8
-    m_Position: {x: 4.308692, y: -0.0029141952}
+    m_Position: {x: 4.308587, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -200,7 +200,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: bc1290d632b0ab44abc823816baad2b9,
       type: 3}
     m_Threshold: 1
-    m_Position: {x: -0.18786456, y: -4.2760687}
+    m_Position: {x: -3.0067549, y: -3.0077317}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -209,7 +209,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: b4e758bb19fa4b142bd40f8c9338f468,
       type: 3}
     m_Threshold: 1.2
-    m_Position: {x: 3.2292252, y: -2.873721}
+    m_Position: {x: 3.0556052, y: -3.0560632}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -218,7 +218,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: 6e6f7d4c284daea4baafc26551a425c9,
       type: 3}
     m_Threshold: 1.4000001
-    m_Position: {x: -3.2550037, y: 2.8160985}
+    m_Position: {x: -3.0405242, y: 3.0408063}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
@@ -227,7 +227,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: f393a58ab8c755d4785378268421795d,
       type: 3}
     m_Threshold: 1.6000001
-    m_Position: {x: 2.9336426, y: 2.9200935}
+    m_Position: {x: 2.9264624, y: 2.9265196}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal

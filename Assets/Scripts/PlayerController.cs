@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMoving()
     {
-        pawn.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+        pawn.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
     }
 
     private void HandleShooting()

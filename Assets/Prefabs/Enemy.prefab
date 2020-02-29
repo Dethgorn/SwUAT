@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2179802104938895911}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,8 @@ GameObject:
   - component: {fileID: 8226670786292456649}
   - component: {fileID: 8226670786292456653}
   - component: {fileID: -4807043882436119573}
-  m_Layer: 8
+  - component: {fileID: -1774755952604550478}
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +118,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.23
-  m_Height: 1.69
+  m_Height: 1.6
   m_Direction: 1
   m_Center: {x: 0.06, y: 0.85, z: 0.02}
 --- !u!114 &8226670786292456648
@@ -163,6 +164,22 @@ MonoBehaviour:
   playerCurrentHealth: 0
   playerMaxShields: 0
   playerCurrentShields: 0
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4807043882436119573}
+        m_MethodName: EnableRagdoll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &8226670786292456653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +210,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91d2001d5740d240bfc67c11939a64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &-1774755952604550478
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75132276155795386}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &246274721071097221
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3456290339518784537}
   - component: {fileID: 5510972851384619743}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Soldier_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627750010284193511}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5451487476867582403}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftFootToeBase_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 359694799985843861}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4902951564065049855}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9199490325510475871}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7006063580020465027}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5322089478537442307}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Neck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3631860413576677933}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3374242513573128404}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1468015828619717335}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5237203168848656037}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4432771736386676402}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4479950057284949985}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7245018620663314143}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5380300316536297606}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +800,7 @@ GameObject:
   - component: {fileID: 768453141}
   - component: {fileID: 768453140}
   - component: {fileID: 768453139}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +863,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006489456, y: -0.41761842, z: -0.005785797}
+  m_ConnectedAnchor: {x: 0.000064872205, y: -0.41761842, z: -0.005785916}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -870,7 +909,7 @@ GameObject:
   - component: {fileID: 2054480096}
   - component: {fileID: 2054480095}
   - component: {fileID: 2054480094}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +974,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0443687, y: 0.5061338, z: 0.0857041}
+  m_ConnectedAnchor: {x: 0.044368736, y: 0.5061338, z: 0.08570416}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -978,7 +1017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8879768927691794543}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1009,7 +1048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1185065398728589831}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7356297198895513377}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4974180761161060468}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3198049898100822874}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 514213956645381559}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4837163499466440774}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3307631107034807516}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2939340596844791898}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8135197503879899442}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,7 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3941170852248996963}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1321,7 +1360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8882212479029156078}
   - component: {fileID: 7158181991646516875}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Soldier_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1454,7 +1493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036144691404265005}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6233955263225742898}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1515,7 +1554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5952453170968638816}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1546,7 +1585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 146654237290769176}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1579,7 +1618,7 @@ GameObject:
   - component: {fileID: 931482346}
   - component: {fileID: 931482344}
   - component: {fileID: 931482345}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1681,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.089966744, y: 0.39489615, z: 0.021623202}
+  m_ConnectedAnchor: {x: 0.08996673, y: 0.39489615, z: 0.02162318}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1688,7 +1727,7 @@ GameObject:
   - component: {fileID: 1914385256}
   - component: {fileID: 1914385255}
   - component: {fileID: 1914385254}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,7 +1790,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006484985, y: -0.41761896, z: -0.005742036}
+  m_ConnectedAnchor: {x: 0.00006484985, y: -0.41761896, z: -0.005742006}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1794,7 +1833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4541549897244446904}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362830695309208054}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1856,7 +1895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5830457739117364583}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1887,7 +1926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6491768072940135008}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,7 +1957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 264333823645525019}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightFootToeBase_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1948,7 +1987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9130901567349899987}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +2018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3174129859777239616}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2009,7 +2048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3845901252928433485}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2040,7 +2079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197466500482596809}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244331009203695727}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2102,7 +2141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3350088933444642046}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2132,7 +2171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291075716969988079}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5150687291162534533}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2195,7 +2234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 389348182334495737}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2226,7 +2265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4038066672186961380}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2260,7 +2299,7 @@ GameObject:
   - component: {fileID: 1993429311}
   - component: {fileID: 1993429309}
   - component: {fileID: 1993429310}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2322,7 +2361,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000003585592, y: 0.09226303, z: 0.01577095}
+  m_ConnectedAnchor: {x: -0.000000026542693, y: 0.09226301, z: 0.015771013}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2368,7 +2407,7 @@ GameObject:
   - component: {fileID: 502042077}
   - component: {fileID: 502042075}
   - component: {fileID: 502042076}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2431,7 +2470,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.09633803, y: -0.03273302, z: -0.000000055879354}
+  m_ConnectedAnchor: {x: -0.09633798, y: -0.03273304, z: 0.000000014901161}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -2474,7 +2513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4254932856527830970}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3567218617422131757}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,7 +2575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5673987285607930360}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2570,7 +2609,7 @@ GameObject:
   - component: {fileID: 1735399128}
   - component: {fileID: 1735399126}
   - component: {fileID: 1735399127}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2633,7 +2672,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.031120706, y: 0.41554266, z: 0.02013497}
+  m_ConnectedAnchor: {x: -0.03112067, y: 0.4155426, z: 0.020135023}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2676,7 +2715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3002175568517191838}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1077717951867796220}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2737,7 +2776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2223404370991328013}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1615866946522926050}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2800,7 +2839,7 @@ GameObject:
   - component: {fileID: 7341019511854344890}
   - component: {fileID: 604367861}
   - component: {fileID: 604367860}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2867,7 +2906,7 @@ GameObject:
   - component: {fileID: 1002144430}
   - component: {fileID: 1002144428}
   - component: {fileID: 1002144429}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2976,7 +3015,7 @@ GameObject:
   - component: {fileID: 1638388889}
   - component: {fileID: 1638388888}
   - component: {fileID: 1638388887}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3039,7 +3078,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.12319096, y: -0.011129942, z: -0.017934976}
+  m_ConnectedAnchor: {x: -0.12319098, y: -0.011129968, z: -0.017934972}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3082,7 +3121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6273597506001073519}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3113,7 +3152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2958930655131991796}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3147,7 +3186,7 @@ GameObject:
   - component: {fileID: 587222446}
   - component: {fileID: 587222445}
   - component: {fileID: 587222444}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3210,7 +3249,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.12323094, y: -0.011130128, z: -0.017935093}
+  m_ConnectedAnchor: {x: 0.123231046, y: -0.011130046, z: -0.017934993}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3253,7 +3292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8226670785907693456}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3283,7 +3322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8226670786065268171}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: IKLeftElbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3313,7 +3352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8226670786283143823}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: IKRightElbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3343,7 +3382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1787210667954901542}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3374,7 +3413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8375826248748953472}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3405,7 +3444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1563459853709375981}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3435,7 +3474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3346543695892201359}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: swat:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
