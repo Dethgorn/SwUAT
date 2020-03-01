@@ -330,15 +330,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c2e770de67df144920df531ec80fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageDone: 2
+  DamageDone: 50
   leftHand: {fileID: 8983450226980793458}
   rightHand: {fileID: 3385461423204882370}
   ammoCount: 100
-  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
   barrel: {fileID: 7062230819328217485}
   isFiring: 0
   fireRate: 1
   muzzleVelocity: 15
+  bullet: {fileID: 407199781508845867, guid: dfc5324eac585eb41ba446cf3527f976, type: 3}
 --- !u!1 &6028357868078946004
 GameObject:
   m_ObjectHideFlags: 0

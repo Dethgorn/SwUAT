@@ -85,7 +85,7 @@ public class CharacterPawn : MonoBehaviour
     {
         OnTriggerPull.RemoveListener(GameManager.instance.equippedWeapon.OnPullTrigger);
         OnTriggerRelease.RemoveListener(GameManager.instance.equippedWeapon.OnReleaseTrigger);
-        Destroy(GameManager.instance.equippedWeapon.gameObject);
+        GameManager.instance.equippedWeapon = null;
         weapon = null;
     }
 }

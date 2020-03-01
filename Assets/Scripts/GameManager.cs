@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawnPoints;
 
-    public List<GameObject> currentActiveEnemies;
+    //public List<GameObject> currentActiveEnemies; // this is a work in progress
+    public int currentEnemyCount;
     public int maxActiveEnemies;
+
+    public int maxEnemySpawnCount;
 
     // Start is called before the first frame update
     void Awake()
