@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 3370574984578516506}
   - component: {fileID: 8462772962779594062}
   - component: {fileID: -3089482385060877325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AK-47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
