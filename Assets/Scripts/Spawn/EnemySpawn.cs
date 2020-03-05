@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     // private
     private GameObject badguy;
     private Transform spawnPoint;
-    private PlayerHealth enemyHP;
+    //private PlayerHealth enemyHP;
     private int enemySpawnCount;
 
     // Start is called before the first frame update
@@ -49,11 +49,11 @@ public class EnemySpawn : MonoBehaviour
         GameManager.instance.currentEnemyCount++;
         enemySpawnCount++;
         // grab the component and add a listener
-        enemyHP = badguy.GetComponent<PlayerHealth>();
-        if (enemyHP != null)
-        {
-            enemyHP.onDie.AddListener(HandleEnemyDeath);
-        }
+        //enemyHP = badguy.GetComponent<PlayerHealth>();
+        //if (enemyHP != null)
+        //{
+        //    //enemyHP.onDie.AddListener(HandleEnemyDeath);
+        //}
 
         if (enemySpawnCount > GameManager.instance.maxEnemySpawnCount)
         {
@@ -61,7 +61,7 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    void HandleEnemyDeath()
+    public void HandleEnemyDeath()
     {
         // remove from count
         GameManager.instance.currentEnemyCount--;

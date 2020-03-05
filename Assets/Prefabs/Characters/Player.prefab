@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8226670786292456649}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   dashDistance: 1
   startDashTime: 1
   attachmentPoint: {fileID: 8226670785907693456}
+  weapon: {fileID: 0}
   rightHandPoint: {fileID: 0}
   rightElbowPoint: {fileID: 8226670786283143823}
   leftHandPoint: {fileID: 0}

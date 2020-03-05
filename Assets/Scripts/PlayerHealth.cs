@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour
     [Space(10)]
     [SerializeField, Tooltip("The player's maximum shield point setting")] private float playerMaxShields;
     [SerializeField, Tooltip("The player's current shield point setting")] private float playerCurrentShields;
+    private GameObject character;
+
+
     [HideInInspector]
     public UnityFloatEvent OnHealthChange = new UnityFloatEvent();
     public UnityEvent onDie;
@@ -20,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         playerCurrentHealth = playerMaxHealth;
+        character = this.gameObject;
     }
 
     private void Update()
@@ -34,22 +38,6 @@ public class PlayerHealth : MonoBehaviour
     public float GetHealth()
     {
         return playerCurrentHealth;
-    }
-
-
-    /// <summary>
-    /// Sets the player's current health private variable by passing in an integer.
-    /// </summary>
-    /// <param name="hp"></param>
-    public void SetHealth(float hp)
-    {
-        // Debug.Log(playerCurrentHealth);
-        // make sure we don't go over the max
-        if ((hp + playerCurrentHealth) <= playerMaxHealth)
-        {
-            playerCurrentHealth += hp;
-            OnHealthChange.Invoke(playerCurrentHealth);
-        }
     }
 
     /// <summary>
@@ -73,16 +61,33 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(float hpGained)
+    {
+        // check for overhealing
+        if ((hpGained + playerCurrentHealth) <= playerMaxHealth)
+        {
+            // add shield mechanic here
+        }
+
+        // add hp
+        playerCurrentHealth += hpGained;
+        // give it a clamp
+        playerCurrentHealth = Mathf.Clamp(playerCurrentHealth, 0, playerMaxHealth);
+        OnHealthChange.Invoke(playerCurrentHealth);
+
+        
+    }
+
     public void TakeDamage(float amountOfDamage)
     {
         playerCurrentHealth -= amountOfDamage;
         playerCurrentHealth = Mathf.Clamp(playerCurrentHealth, 0, playerMaxHealth);
+        OnHealthChange.Invoke(playerCurrentHealth);
         if (playerCurrentHealth <= 0)
         {
             onDie.Invoke();
+            // despawn
+            Destroy(character, 2f);
         }
     }
-
-    
-
 }

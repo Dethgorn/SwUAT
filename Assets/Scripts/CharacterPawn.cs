@@ -63,7 +63,7 @@ public class CharacterPawn : MonoBehaviour
 
     public void AddHealth(float healthToAdd)
     {
-        playerHP.SetHealth(healthToAdd);
+        playerHP.Heal(healthToAdd);
     }
 
     public void EquipWeapon(Weapon gun)

@@ -8,12 +8,14 @@ public class AIController : MonoBehaviour
     public CharacterPawn AIpawn;
     private NavMeshAgent agent;
     public Transform target;
+
     
+
 
     private void Awake()
     {
         agent = AIpawn.GetComponent<NavMeshAgent>();
-        agent.enabled = true;
+        //agent.enabled = true;
         
     }
 
@@ -26,6 +28,7 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //player = FindObjectOfType();
         //if (!player)
         //{
@@ -36,5 +39,7 @@ public class AIController : MonoBehaviour
         //}
 
         agent.SetDestination(target.position);
+
+        
     }
 }

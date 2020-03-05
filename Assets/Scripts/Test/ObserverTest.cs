@@ -18,7 +18,7 @@ public class ObserverTest : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            playerHPComponent.SetHealth(-1);
+            playerHPComponent.TakeDamage(1);
         }
     }
 }
