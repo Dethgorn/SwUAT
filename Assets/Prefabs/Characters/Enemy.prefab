@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: -4807043882436119573}
   - component: {fileID: -1774755952604550478}
   - component: {fileID: 1998931556478929714}
+  - component: {fileID: -7948940054773796388}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -250,6 +251,20 @@ MonoBehaviour:
   - {fileID: 2065520883011756111, guid: 2e52f0b26b47a9a4dbe1d1fb9044cbf1, type: 3}
   maxRange: 7
   distanceToShoot: 0
+--- !u!114 &-7948940054773796388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75132276155795386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1857bf3886b41948b9f62612251e7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIpawn: {fileID: 8226670786292456648}
+  target: {fileID: 3986166916358616489, guid: 13851ff0018e536499e106c4ec2d887e, type: 3}
 --- !u!1 &246274721071097221
 GameObject:
   m_ObjectHideFlags: 0

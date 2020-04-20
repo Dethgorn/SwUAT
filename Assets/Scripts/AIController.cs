@@ -8,6 +8,7 @@ public class AIController : MonoBehaviour
     public CharacterPawn AIpawn;
     private NavMeshAgent agent;
     public Transform target;
+    public Animator anim;
 
     
 
@@ -15,6 +16,7 @@ public class AIController : MonoBehaviour
     private void Awake()
     {
         agent = AIpawn.GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         //agent.enabled = true;
         
     }
@@ -40,6 +42,16 @@ public class AIController : MonoBehaviour
 
         agent.SetDestination(target.position);
 
-        
+        Vector3 input = agent.desiredVelocity;
+        input = transform.InverseTransformDirection(input);
+        anim.SetFloat("Horizontal", input.x);
+        anim.SetFloat("Vertical", input.z);
+
     }
+
+    private void OnAnimatorMove()
+    {
+        agent.velocity = anim.velocity;
+    }
+
 }
